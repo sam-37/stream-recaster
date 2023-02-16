@@ -1,0 +1,56 @@
+{
+    // Use IntelliSense to learn about possible Node.js debug attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch Server",
+            "program": "${workspaceRoot}/app.js",
+            "args": ["-m server", "-n impClient", "-o udp://227.1.1.2:30122", "-c mission1"]           
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch Recaster Udp",
+            "program": "${workspaceRoot}/app.js",
+            "args": ["-i udp://227.1.1.1:30120/nic=192.168.99.1", "-o udp://127.0.0.1:1234" ],
+            "console": "externalTerminal"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch Recaster Multicast->Tcp",
+            "program": "${workspaceRoot}/app.js",
+            "args": ["-i udp://227.1.1.1:30120", "-o tcp://127.0.0.1:1234"],
+            "console": "externalTerminal"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch Recaster Unicast->Tcp",
+            "program": "${workspaceRoot}/app.js",
+            "args": ["-i udp://127.0.0.1:30120", "-o tcp://127.0.0.1:1234"],
+            "console": "externalTerminal"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch Recaster 2 targets",
+            "program": "${workspaceRoot}/app.js",
+            "args": ["-i udp://127.0.0.1:30120", "-o udp://227.1.1.1:30122 tcp://127.0.0.1:1234"],
+            "console": "externalTerminal"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch Recaster Remote Udp",
+            "program": "${workspaceRoot}/app.js",
+            "args": ["-i udp://227.1.1.1:30120", "-o udp://192.168.1.20:1234" ],
+            "console": "externalTerminal"
+        }
+
+    ]
+}

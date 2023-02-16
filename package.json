@@ -1,0 +1,24 @@
+{
+  "name": "streamrecaster",
+  "version": "1.0.6",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "mocha test/test-recaster.js",
+    "start": "node app.js"
+  },
+  "author": "IMPLEOTV SYSTEMS LTD",
+  "license": "ISC",
+  "dependencies": {
+    "argparse": "^1.0.10",
+    "check-ip": "^1.1.1",
+    "colors": "^1.4.0",
+    "command-line-args": "^5.1.1",
+    "single-line-log": "^1.1.2"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "mocha": "^6.2.3"
+  }
+}

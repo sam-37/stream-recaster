@@ -1,6 +1,6 @@
-node_modules/
-npm-debug.log*
+
+**/node_modules/
 *.exe
+*.pdf
 *.zip
-.ftp-deploy-sync-state.json
 
