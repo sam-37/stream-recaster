@@ -41,7 +41,7 @@ Additional flags for web RTC version
 1. Recasting UDP unicast to multicast or vice versa:
 
 ```
-node app.js -i udp://127.0.0.1:30120 -o udp://227.1.1.1:30122'
+node app.js -i udp://127.0.0.1:30120 -o udp://227.1.1.1:30122
 ``` 
 > Note, if you need to select specific network interface, add  **/nic=X.X.X.X** (for example **/nic=192.168.99.1**) to the **url**
 

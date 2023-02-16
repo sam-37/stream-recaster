@@ -14,9 +14,16 @@
         {
             "type": "node",
             "request": "launch",
+            "name": "Recaster Unicast to Multicast",
+            "program": "${workspaceRoot}/app.js",
+            "args": ["-i udp://192.168.1.32:30120/nic=192.168.1.32 -o udp://227.1.1.1:30122"],
+        },
+        {
+            "type": "node",
+            "request": "launch",
             "name": "Launch Recaster Udp",
             "program": "${workspaceRoot}/app.js",
-            "args": ["-i udp://227.1.1.1:30120/nic=192.168.99.1", "-o udp://127.0.0.1:1234" ],
+            "args": ["-i udp://227.1.1.1:30120/nic=192.168.1.32", "-o udp://127.0.0.1:1234" ],
             "console": "externalTerminal"
         },
         {
