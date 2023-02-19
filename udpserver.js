@@ -33,7 +33,7 @@ module.exports = class UdpServer extends EventEmitter {
 
         this.nic = options && options.nic || nic || '0.0.0.0';
         this.reuseAddr = (options && options.reuseAddr === false) ? false : true;
-        this.udpServer = dgram.createSocket({ type: 'udp4', reuseAddr: this.reuseAddr });
+        this.udpServer = dgram.createSocket({ type: 'udp4', reuseAddr: this.reuseAddr , recvBufferSize: 8*1024*1024, sendBufferSize: 8*1024*1024});
         this.address = urlParsed.hostname || 'localhost';
         this.port = urlParsed.port ? Number(urlParsed.port) : 30120;
         this.exclusive = options && options.exclusive || false;
