@@ -15,25 +15,23 @@ streamRecaster -i udp://127.0.0.1:30120 -o udp://227.1.1.1:30122
 
 | Flag     |      Name     | Description |
 |----------|:-------------:|:--------------------------------------------|
-| -i       |  --input      | Input url |
-| -o       |  --output     | List of output urls (should be passed as a string, for example -o 'udp://227.1.1.1:30122 tcp://127.0.0.1:1234') |
-| -m       | --mode        | Operational mode: recaster/server/client. Default recaster' |
+| -i       | --input       | Input url |
+| -o       | --output      | List of output urls (should be passed as a string, for example -o 'udp://227.1.1.1:30122 tcp://127.0.0.1:1234') |
 | -t       | --timeout     | Stream timeout detection in ms |
 |          | --printUsage  | Print args description (true/false) |
 | -v       | --version     | Version |
 
 
-Additional flags for web RTC version
-| Flag     |      Name     | Description |
-|----------|:-------------:|:-------------------------------------------|
-| -n       | --name        | Peer name |
-| -c       | --channel     | Channel name |
-| -s       | --signal      | Comma separated private signaling Url list |
-| -p       | --protocol    | peer protocol (defaultValue: 'webrtc') |
-
 ### Usage
 
 > Note. For compiled version, use **streamRecaster.exe** instead of  **node app.js**
+
+
+#### Docker
+
+```
+docker run -it --rm --network host impleo/stream-recaster:1.0.7 -i udp://0.0.0.0:30120 -o udp://227.1.1.1:30122
+```
 
 
 #### UDP / TCP recasting
@@ -57,29 +55,3 @@ It is possilbe to combine different output stream protocols. For example, as sho
 node app.js -i udp://127.0.0.1:30120 -o 'udp://227.1.1.1:30122 tcp://127.0.0.1:1234'
 ```
 
-#### WebRTC tunneling 
-
-1. On the remote (server) machine run the Recaster, specifying the peer and and channel names and providing the input / output urls. For example:
-```
-node app.js -i udp://127.0.0.1:30120 -o udp://227.1.1.1:30120 -m server -n peer1 -c channel1
-``` 
-
-2. On the local (client) machine run the Recaster with corresponding arguments. For example:
-```
-node app.js -i udp://227.1.1.1:30120 -o udp://127.0.0.1:30120  -m client -n peer1 -c channel1
-```
-
-Now, the client should connect to the server, establishing a session.
-```
-Name: peer1
-Mode: client
-Adding recast target: udp://127.0.0.1:30120
-Init peer- channel1
-Recaster listening on 0.0.0.0:30120
-Create peer- channel1
-Received:  0.00 MB Avg bitrate (Local):  0.00 Mb/s  Avg bitrate (Peer):  0.00 Mb/s WebRTC- answer
-Received:  0.00 MB Avg bitrate (Local):  0.00 Mb/s  Avg bitrate (Peer):  0.00 Mb/s Client connected with peer1-lo4bmt8ieugzpy on channel channel1
-Received:  0.00 MB Avg bitrate (Local):  0.00 Mb/s  Avg bitrate (Peer):  0.00 Mb/s
-```
-
-When streaming is started, the information on the sent / received data will be shown at both server and client

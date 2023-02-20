@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "test": "mocha test/test-recaster.js",
-    "start": "node app.js"
+    "start": "node app.js",
+    "build-docker": "docker build -t stream-recaster ."
   },
   "author": "IMPLEOTV SYSTEMS LTD",
   "license": "ISC",
