@@ -7,9 +7,7 @@ You can recast udp unicast / multicast streams to multiple udp (unicast / multic
 
 ## Usage
 
-```
-streamRecaster -i udp://127.0.0.1:30120 -o udp://227.1.1.1:30122
-```
+You can use the stream-recaster from node.js, as a compiled executable or as a docker container.
 
 ### Options
 
@@ -25,10 +23,20 @@ streamRecaster -i udp://127.0.0.1:30120 -o udp://227.1.1.1:30122
 
 ### Usage
 
-> Note. For compiled version, use **streamRecaster.exe** instead of  **node app.js**
 
+Compiled exe (Windows)
 
-#### Docker
+```
+streamRecaster -i udp://127.0.0.1:30120 -o udp://227.1.1.1:30122
+```
+
+Nodejs 
+
+```
+node app.js -i udp://127.0.0.1:30120 -o udp://227.1.1.1:30122
+```
+
+Docker
 
 ```
 docker run -it --rm --network host impleo/stream-recaster:1.0.7 -i udp://0.0.0.0:30120 -o udp://227.1.1.1:30122
