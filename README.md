@@ -21,6 +21,7 @@ streamRecaster -i udp://127.0.0.1:30120 -o udp://227.1.1.1:30122
 |          | --printUsage  | Print args description (true/false) |
 | -v       | --version     | Version |
 
+> To specify the network interface, andd "/nic=X.X.X.X", for example udp://227.1.1.1:30120/nic=172.16.106.10
 
 ### Usage
 
