@@ -10,15 +10,15 @@
   "author": "IMPLEOTV SYSTEMS LTD",
   "license": "ISC",
   "dependencies": {
-    "argparse": "^1.0.10",
+    "argparse": "^2.0.1",
     "check-ip": "^1.1.1",
     "colors": "^1.4.0",
     "command-line-args": "^5.1.1",
+    "mocha": "^10.2.0",
     "single-line-log": "^1.1.2"
   },
   "devDependencies": {
     "chai": "^4.2.0",
-    "chai-http": "^4.3.0",
-    "mocha": "^6.2.3"
+    "chai-http": "^4.3.0"
   }
 }
