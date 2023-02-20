@@ -1,7 +1,7 @@
 {
   "name": "streamrecaster",
   "version": "1.0.6",
-  "description": "",
+  "description": "Stream recaster",
   "main": "app.js",
   "scripts": {
     "test": "mocha test/test-recaster.js",

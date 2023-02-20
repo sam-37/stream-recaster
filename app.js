@@ -16,23 +16,23 @@ let timeoutState = false;
 const targets = [];
 
 const ArgumentParser = require('argparse').ArgumentParser;
-const parser = new ArgumentParser({ addHelp: true, description: 'Stream recaster', epilog: 'Start recasting...' });
-parser.addArgument(['-i', '--input'], { metavar: '', help: 'Input url' });
-parser.addArgument(['-o', '--output'], { metavar: '', defaultValue: '', help: 'List of output urls' });
-parser.addArgument(['-m', '--mode'], { metavar: '', choices: ['recaster', 'server', 'client'], defaultValue: 'recaster', help: 'Mode: recaster/server/client. Default recaster' });
-parser.addArgument(['-t', '--timeout'], { metavar: '', defaultValue: 2000, help: 'Stream timeout detection in ms' });
-parser.addArgument('--printUsage', { metavar: '', defaultValue: 'true', help: 'Print args description (true/false)' });
-parser.addArgument(['-v', '--version'], {  metavar: '', help: 'Version' });
+const parser = new ArgumentParser({ add_help: true, description: 'Stream recaster', epilog: 'Start recasting...' });
+parser.add_argument('-i', '--input', { metavar: '', help: 'Input url' });
+parser.add_argument('-o', '--output', { metavar: '', default: '', help: 'List of output urls' });
+parser.add_argument('-m', '--mode', { metavar: '', choices: ['recaster', 'server', 'client'], default: 'recaster', help: 'Mode: recaster/server/client. Default recaster' });
+parser.add_argument('-t', '--timeout', { metavar: '', default: 2000, help: 'Stream timeout detection in ms' });
+parser.add_argument('--printUsage', { metavar: '', default: 'true', help: 'Print args description (true/false)' });
+parser.add_argument('-v', '--version', {  metavar: '', help: 'Version' });
 
-//parser.addArgument(['-n', '--name'], { help: 'Peer name' });
-//parser.addArgument(['-c', '--channel'], { help: 'Channel name' });
-//parser.addArgument(['-s', '--signal'], { help: 'comma separated private signaling Url list' });
-//parser.addArgument(['-p', '--protocol'], { defaultValue: 'webrtc', help: 'peer protocol' });
+//parser.add_argument(['-n', '--name'], { help: 'Peer name' });
+//parser.add_argument(['-c', '--channel'], { help: 'Channel name' });
+//parser.add_argument(['-s', '--signal'], { help: 'comma separated private signaling Url list' });
+//parser.add_argument(['-p', '--protocol'], { default: 'webrtc', help: 'peer protocol' });
 
 
-const argv = parser.parseArgs();
+const argv = parser.parse_args();
 if(JSON.parse(argv.printUsage.trim()))
-    parser.printHelp();
+    parser.print_help();
 
 if (argv.help || process.argv.length < 3) {
     parser.printHelp();
